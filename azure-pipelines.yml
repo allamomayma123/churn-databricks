@@ -27,11 +27,21 @@ steps:
   displayName: 'Convert Notebooks to Python Scripts'
 
 - script: |
-    python /home/vsts/work/1/s/DATA_PREPARATION.py
-    python /home/vsts/work/1/s/EXPLORATORY_DATA_ANALYSIS.py
-    python /home/vsts/work/1/s/HYPERPARAMETER_TUNING.py
-    python /home/vsts/work/1/s/MODEL_SELECTION.py
+    ls -la
+  displayName: 'List Files After Conversion'
+
+
+- script: |
+    python DATA_PREPARATION.py || exit 1
+    python EXPLORATORY_DATA_ANALYSIS.py || exit 1
+    python HYPERPARAMETER_TUNING.py || exit 1
+    python MODEL_SELECTION.py || exit 1
   displayName: 'Run Python Scripts'
+
+- script: |
+    pip install numpy  # Add other necessary libraries here
+  displayName: 'Install Additional Dependencies'
+
 
 - script: |
     pytest
