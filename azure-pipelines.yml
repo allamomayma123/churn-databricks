@@ -13,10 +13,6 @@ steps:
     versionSpec: '$(pythonVersion)'
     addToPath: true
 
-- script: |
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-  displayName: 'Install Dependencies'
 
 - script: |
     jupyter nbconvert --to script DATA_PREPARATION.ipynb
