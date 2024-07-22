@@ -27,10 +27,10 @@ steps:
   displayName: 'Convert Notebooks to Python Scripts'
 
 - script: |
-    python DATA_PREPARATION.py
-    python EXPLORATORY_DATA_ANALYSIS.py
-    python HYPERPARAMETER_TUNING.py
-    python MODEL_SELECTION.py
+    python /home/vsts/work/1/s/DATA_PREPARATION.py
+    python /home/vsts/work/1/s/EXPLORATORY_DATA_ANALYSIS.py
+    python /home/vsts/work/1/s/HYPERPARAMETER_TUNING.py
+    python /home/vsts/work/1/s/MODEL_SELECTION.py
   displayName: 'Run Python Scripts'
 
 - script: |
