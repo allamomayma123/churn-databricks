@@ -13,6 +13,11 @@ steps:
     versionSpec: '$(pythonVersion)'
     addToPath: true
 
+# Install Jupyter
+- script: |
+    pip install jupyter
+  displayName: 'Install Jupyter'
+
 
 - script: |
     jupyter nbconvert --to script DATA_PREPARATION.ipynb
